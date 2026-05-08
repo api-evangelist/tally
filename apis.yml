@@ -1,0 +1,29 @@
+aid: tally
+url: https://raw.githubusercontent.com/api-evangelist/tally/refs/heads/main/apis.yml
+name: Tally
+x-type: company
+description: >-
+  Tally is a free Notion-style form and survey builder with no submission limits, calculations, and integrations with major no-code tools.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Forms
+  - Surveys
+  - No-Code
+  - Free
+  - Notion-style
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://tally.so/
+  - type: Plans
+    url: plans/tally-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/tally-rate-limits.yml
+  - type: FinOps
+    url: finops/tally-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
