@@ -5,7 +5,7 @@ provider: Tally
 providerId: tally
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Forms
 - Surveys
@@ -13,29 +13,86 @@ tags:
 - Free
 - Notion-style
 - Plans
-description: Placeholder plans/pricing artifact for Tally. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+- Pricing
+description: >-
+  Tally offers an unusually generous Free plan with unlimited forms and
+  unlimited submissions (subject to fair-use). Two paid tiers — Pro and
+  Business — add team features, custom branding/CSS, custom domains and
+  longer version history. The Tally API is free for all plans including Free.
+notes: >-
+  Pricing reflects the public tally.so/pricing page as of 2026-05-08. EU-based,
+  GDPR-compliant.
 sources:
-- https://tally.so/
+- https://tally.so/pricing
 plans:
-- id: tally-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: tally-free
+  name: Free
+  type: free
+  description: Unlimited forms and submissions (fair use). Includes conditional logic, signatures, file uploads, payments, and integrations.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Plan price
+    name: monthly_price
     type: flat
-    metric: varies
+    metric: month
     limit: -1
-    timeFrame: usage
+    timeFrame: month
     geo: global
     unit: 1
-    price: see https://tally.so/
+    price: 0
+    currency: USD
     userMultiplied: false
-  elements:
-  - name: Pending Reconciliation
+  - label: Forms
+    name: forms
+    type: tier
+    metric: forms
+    limit: -1
+    timeFrame: ongoing
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  - label: Submissions
+    name: submissions
+    type: tier
+    metric: submissions/month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+- id: tally-pro
+  name: Pro
+  type: subscription
+  description: $24/month. Removes Tally branding, custom domains, unlimited team collaboration, custom CSS, custom-domain email notifications, extended analytics.
+  entries:
+  - label: Plan price
+    name: monthly_price
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 24
+    currency: USD
+    userMultiplied: false
+- id: tally-business
+  name: Business
+  type: subscription
+  description: $74/month. All Pro features plus data retention controls, email verification, 90-day version history.
+  entries:
+  - label: Plan price
+    name: monthly_price
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 74
+    currency: USD
+    userMultiplied: false
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

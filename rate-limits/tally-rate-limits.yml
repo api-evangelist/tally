@@ -15,21 +15,36 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Tally. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Tally REST API requests are throttled per API key. Tally publishes that the
+  API is free across all plans (no per-call charge) but does not enumerate a
+  specific per-second numeric ceiling on the public reference. 429 with
+  Retry-After is returned when the throttle is exceeded.
+notes: >-
+  Submissions themselves are unlimited on every plan subject to fair use. If
+  request volume becomes a concern, Tally support raises caps on a per-team
+  basis. Reconciled flagged false until exact numbers are documented publicly.
 sources:
-- https://tally.so/
+- https://developers.tally.so/api-reference/introduction
+- https://tally.so/help/api
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: REST API per token
+  scope: api_token
+  metric: requests
+  limit: see Tally API reference
+  notes: Per-token throttle; 429 + Retry-After.
+- name: Submissions per plan (fair use)
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: submissions/month
+  limit: -1
+  notes: Unlimited under fair-use guidelines.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Honor Retry-After on 429; use exponential backoff with jitter.
+- name: Webhook over polling
+  description: Use webhooks for new-submission delivery rather than polling /forms/{id}/submissions.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

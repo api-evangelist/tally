@@ -3,7 +3,11 @@ url: https://raw.githubusercontent.com/api-evangelist/tally/refs/heads/main/apis
 name: Tally
 x-type: company
 description: >-
-  Tally is a free Notion-style form and survey builder with no submission limits, calculations, and integrations with major no-code tools.
+  Tally is a Notion-style form and survey builder offering unlimited forms and
+  submissions on its free plan. The Tally API exposes forms, submissions and
+  webhooks programmatically and is free to use across all plans (including
+  Free). Tally also publishes a JS embed library and an MCP server for AI
+  integration.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Forms
@@ -11,13 +15,57 @@ tags:
   - No-Code
   - Free
   - Notion-style
+  - Webhooks
+  - MCP
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: tally:rest
+    name: Tally REST API
+    description: >-
+      REST API for managing forms and fetching/deleting submissions. Bearer
+      token auth using API keys created from the workspace dashboard. Free on
+      every Tally plan including the Free tier.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developers.tally.so/
+    baseURL: https://api.tally.so
+    tags:
+      - REST
+      - Forms
+      - Submissions
+      - Webhooks
+    properties:
+      - type: Documentation
+        url: https://developers.tally.so/
+      - type: APIReference
+        url: https://developers.tally.so/api-reference/introduction
+      - type: Authentication
+        url: https://developers.tally.so/api-reference/authentication
+      - type: Webhooks
+        url: https://tally.so/help/webhooks
+  - aid: tally:embed
+    name: Tally Embed JS
+    description: >-
+      JavaScript embed library exposing Tally.openPopup, Tally.closePopup,
+      Tally.loadEmbeds and event listeners for form load, page view,
+      submission and popup close.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://tally.so/help/developer-resources
+    baseURL: https://tally.so/widgets/embed.js
+    tags:
+      - SDK
+      - Embed
+      - JavaScript
 common:
   - type: Website
     url: https://tally.so/
+  - type: Documentation
+    url: https://developers.tally.so/
+  - type: Pricing
+    url: https://tally.so/pricing
+  - type: HelpCenter
+    url: https://tally.so/help
   - type: Plans
     url: plans/tally-plans-pricing.yml
   - type: RateLimits
