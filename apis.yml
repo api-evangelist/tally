@@ -1,7 +1,7 @@
 aid: tally
 url: https://raw.githubusercontent.com/api-evangelist/tally/refs/heads/main/apis.yml
 name: Tally
-x-type: company
+kind: company
 description: >-
   Tally is a Notion-style form and survey builder offering unlimited forms and
   submissions on its free plan. The Tally API exposes forms, submissions and
