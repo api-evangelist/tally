@@ -58,6 +58,10 @@ apis:
       - Embed
       - JavaScript
 common:
+  - type: GitHubOrganization
+    url: https://github.com/withtally
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/meettally
   - type: Website
     url: https://tally.so/
   - type: Documentation
