@@ -1,0 +1,477 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tally REST API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Forms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List forms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms"
+          },
+          "docs": "List forms"
+        },
+        {
+          "info": {
+            "name": "Create a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/forms"
+          },
+          "docs": "Create a form"
+        },
+        {
+          "info": {
+            "name": "Fetch a single form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch a single form"
+        },
+        {
+          "info": {
+            "name": "Update form settings/blocks",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.tally.so/forms/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update form settings/blocks"
+        },
+        {
+          "info": {
+            "name": "Delete a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/forms/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a form"
+        },
+        {
+          "info": {
+            "name": "List questions in a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms/:id/questions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List questions in a form"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Submissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List submissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms/:id/submissions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List submissions"
+        },
+        {
+          "info": {
+            "name": "Fetch a submission",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms/:id/submissions/:submissionId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "submissionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch a submission"
+        },
+        {
+          "info": {
+            "name": "Delete a submission",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/forms/:id/submissions/:submissionId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "submissionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a submission"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Workspaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workspaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/workspaces"
+          },
+          "docs": "List workspaces"
+        },
+        {
+          "info": {
+            "name": "Create a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/workspaces"
+          },
+          "docs": "Create a workspace"
+        },
+        {
+          "info": {
+            "name": "Fetch a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/workspaces/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch a workspace"
+        },
+        {
+          "info": {
+            "name": "Update a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.tally.so/workspaces/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a workspace"
+        },
+        {
+          "info": {
+            "name": "Delete a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/workspaces/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a workspace"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/organizations/users"
+          },
+          "docs": "List users"
+        },
+        {
+          "info": {
+            "name": "Remove a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/organizations/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove a user"
+        },
+        {
+          "info": {
+            "name": "List invites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/organizations/invites"
+          },
+          "docs": "List invites"
+        },
+        {
+          "info": {
+            "name": "Create an invite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/organizations/invites"
+          },
+          "docs": "Create an invite"
+        },
+        {
+          "info": {
+            "name": "Cancel an invite",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/organizations/invites/:inviteId",
+            "params": [
+              {
+                "name": "inviteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel an invite"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List webhooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/webhooks"
+          },
+          "docs": "List webhooks"
+        },
+        {
+          "info": {
+            "name": "Create a webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/webhooks"
+          },
+          "docs": "Create a webhook"
+        },
+        {
+          "info": {
+            "name": "Update a webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.tally.so/webhooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a webhook"
+        },
+        {
+          "info": {
+            "name": "Delete a webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/webhooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a webhook"
+        },
+        {
+          "info": {
+            "name": "List webhook events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/webhooks/:id/events",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List webhook events"
+        },
+        {
+          "info": {
+            "name": "Retry a webhook event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/webhooks/:id/events/:eventId/retry",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retry a webhook event"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch current user info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/users/me"
+          },
+          "docs": "Fetch current user info"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

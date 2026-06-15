@@ -1,33 +1,81 @@
 # Tally (tally)
 
-Tally is a Notion-style form and survey builder with unlimited forms and submissions on its Free plan. The Tally REST API is free across all plans, including Free.
+Tally is a Notion-style form and survey builder offering unlimited forms and submissions on its free plan. The Tally API exposes forms, submissions and webhooks programmatically and is free to use across all plans (including Free). Tally also publishes a JS embed library and an MCP server for AI integration.
 
-**APIs.json:** [apis.yml](apis.yml)
-
-## APIs
-- **Tally REST API** — `https://api.tally.so` — manage forms, fetch/delete submissions, webhooks. Bearer-token auth via API keys created from the dashboard. [Reference](https://developers.tally.so/api-reference/introduction).
-- **Embed JS** — `https://tally.so/widgets/embed.js` — `Tally.openPopup`, `Tally.closePopup`, `Tally.loadEmbeds` plus event listeners.
-
-## OpenAPI
-Tally publishes interactive API reference at developers.tally.so but does not currently host a downloadable OpenAPI/Swagger document at a stable public URL as of 2026-05-08; pipeline did not retrieve a spec into `openapi/`.
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/tally/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/tally/refs/heads/main/apis.yml)
 
 ## Tags
-Forms, Surveys, No-Code, Free, Notion-style, Webhooks, MCP
 
-## Common Properties
-- [Website](https://tally.so/) · [Developer Docs](https://developers.tally.so/) · [Pricing](https://tally.so/pricing)
-- [Plans](plans/tally-plans-pricing.yml) — reconciled
-- [Rate Limits](rate-limits/tally-rate-limits.yml) — partially reconciled (numeric per-second limit not public)
-- [FinOps](finops/tally-finops.yml) — reconciled, FOCUS-aligned
-
-## Plans (reconciled)
-- **Free** — unlimited forms / submissions (fair use); core features.
-- **Pro** — $24/mo; remove branding, custom domains, custom CSS, extended analytics.
-- **Business** — $74/mo; data retention controls, email verification, 90-day version history.
+- Forms
+- Surveys
+- No-Code
+- Free
+- Notion-style
+- Webhooks
+- MCP
 
 ## Timestamps
+
 - **Created:** 2026-05-08
 - **Modified:** 2026-05-08
 
+## APIs
+
+### Tally REST API
+
+REST API for managing forms and fetching/deleting submissions. Bearer token auth using API keys created from the workspace dashboard. Free on every Tally plan including the Free tier.
+
+- **Human URL:** [https://developers.tally.so/](https://developers.tally.so/)
+- **Base URL:** `https://api.tally.so`
+
+#### Tags
+
+- REST
+- Forms
+- Submissions
+- Webhooks
+
+#### Properties
+
+- [Documentation](https://developers.tally.so/)
+- [API Reference](https://developers.tally.so/api-reference/introduction)
+- [Authentication](https://developers.tally.so/api-reference/authentication)
+- [Webhooks](https://tally.so/help/webhooks)
+- [Postman Collection](collections/tally.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/tally.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+### Tally Embed JS
+
+JavaScript embed library exposing Tally.openPopup, Tally.closePopup, Tally.loadEmbeds and event listeners for form load, page view, submission and popup close.
+
+- **Human URL:** [https://tally.so/help/developer-resources](https://tally.so/help/developer-resources)
+- **Base URL:** `https://tally.so/widgets/embed.js`
+
+#### Tags
+
+- SDK
+- Embed
+- JavaScript
+
+#### Properties
+
+- [Postman Collection](collections/tally.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/tally.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+
+## Common Properties
+
+- [GitHub Organization](https://github.com/withtally)
+- [LinkedIn](https://www.linkedin.com/company/meettally)
+- [Website](https://tally.so/)
+- [Documentation](https://developers.tally.so/)
+- [Pricing](https://tally.so/pricing)
+- [Help Center](https://tally.so/help)
+- [Plans](plans/tally-plans-pricing.yml)
+- [Rate Limits](rate-limits/tally-rate-limits.yml)
+- [Fin Ops](finops/tally-finops.yml)
+- [L L Ms Txt](https://tally.so/llms.txt)
+
 ## Maintainers
-- **Kin Lane** — kin@apievangelist.com
+
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
