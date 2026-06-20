@@ -8,7 +8,7 @@ description: >-
   webhooks programmatically and is free to use across all plans (including
   Free). Tally also publishes a JS embed library and an MCP server for AI
   integration.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Forms
   - Surveys
@@ -27,7 +27,7 @@ apis:
       REST API for managing forms and fetching/deleting submissions. Bearer
       token auth using API keys created from the workspace dashboard. Free on
       every Tally plan including the Free tier.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developers.tally.so/
     baseURL: https://api.tally.so
     tags:
@@ -50,7 +50,7 @@ apis:
       JavaScript embed library exposing Tally.openPopup, Tally.closePopup,
       Tally.loadEmbeds and event listeners for form load, page view,
       submission and popup close.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://tally.so/help/developer-resources
     baseURL: https://tally.so/widgets/embed.js
     tags:
