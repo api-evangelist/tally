@@ -76,7 +76,7 @@ common:
     url: rate-limits/tally-rate-limits.yml
   - type: FinOps
     url: finops/tally-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://tally.so/llms.txt
 maintainers:
   - FN: Kin Lane
