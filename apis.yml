@@ -58,6 +58,10 @@ apis:
       - Embed
       - JavaScript
 common:
+  - type: DomainSecurity
+    url: security/tally-domain-security.yml
+  - type: Authentication
+    url: authentication/tally-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/withtally
   - type: LinkedIn
