@@ -58,6 +58,8 @@ apis:
       - Embed
       - JavaScript
 common:
+  - type: AgenticAccess
+    url: agentic-access/tally-agentic-access.yml
   - type: DomainSecurity
     url: security/tally-domain-security.yml
   - type: Authentication
