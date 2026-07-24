@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: Tally REST Forms Workspaces API
+  description: 'REST API for the Tally form and survey builder. Manage forms, questions, submissions, workspaces, organization users and invites, and webhooks. Bearer token authentication using API keys created from the workspace dashboard. Source: https://developers.tally.so/'
+  version: '1.0'
+  contact:
+    name: Tally
+    url: https://developers.tally.so/
+servers:
+- url: https://api.tally.so
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Workspaces
+paths:
+  /workspaces:
+    get:
+      tags:
+      - Workspaces
+      summary: List workspaces
+      operationId: listWorkspaces
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Workspaces
+      summary: Create a workspace
+      operationId: createWorkspace
+      responses:
+        '201':
+          description: Created
+  /workspaces/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Workspaces
+      summary: Fetch a workspace
+      operationId: getWorkspace
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+      - Workspaces
+      summary: Update a workspace
+      operationId: updateWorkspace
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Workspaces
+      summary: Delete a workspace
+      operationId: deleteWorkspace
+      responses:
+        '204':
+          description: Deleted
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Tally API key created in the workspace dashboard, sent as "Authorization: Bearer <token>".'

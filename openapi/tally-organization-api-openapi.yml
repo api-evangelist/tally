@@ -1,0 +1,78 @@
+openapi: 3.1.0
+info:
+  title: Tally REST Forms Organization API
+  description: 'REST API for the Tally form and survey builder. Manage forms, questions, submissions, workspaces, organization users and invites, and webhooks. Bearer token authentication using API keys created from the workspace dashboard. Source: https://developers.tally.so/'
+  version: '1.0'
+  contact:
+    name: Tally
+    url: https://developers.tally.so/
+servers:
+- url: https://api.tally.so
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Organization
+paths:
+  /organizations/users:
+    get:
+      tags:
+      - Organization
+      summary: List users
+      operationId: listOrganizationUsers
+      responses:
+        '200':
+          description: OK
+  /organizations/users/{userId}:
+    parameters:
+    - name: userId
+      in: path
+      required: true
+      schema:
+        type: string
+    delete:
+      tags:
+      - Organization
+      summary: Remove a user
+      operationId: removeOrganizationUser
+      responses:
+        '204':
+          description: Removed
+  /organizations/invites:
+    get:
+      tags:
+      - Organization
+      summary: List invites
+      operationId: listInvites
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Organization
+      summary: Create an invite
+      operationId: createInvite
+      responses:
+        '201':
+          description: Created
+  /organizations/invites/{inviteId}:
+    parameters:
+    - name: inviteId
+      in: path
+      required: true
+      schema:
+        type: string
+    delete:
+      tags:
+      - Organization
+      summary: Cancel an invite
+      operationId: cancelInvite
+      responses:
+        '204':
+          description: Cancelled
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Tally API key created in the workspace dashboard, sent as "Authorization: Bearer <token>".'

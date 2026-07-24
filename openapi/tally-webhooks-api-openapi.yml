@@ -1,0 +1,97 @@
+openapi: 3.1.0
+info:
+  title: Tally REST Forms Webhooks API
+  description: 'REST API for the Tally form and survey builder. Manage forms, questions, submissions, workspaces, organization users and invites, and webhooks. Bearer token authentication using API keys created from the workspace dashboard. Source: https://developers.tally.so/'
+  version: '1.0'
+  contact:
+    name: Tally
+    url: https://developers.tally.so/
+servers:
+- url: https://api.tally.so
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Webhooks
+paths:
+  /webhooks:
+    get:
+      tags:
+      - Webhooks
+      summary: List webhooks
+      operationId: listWebhooks
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Webhooks
+      summary: Create a webhook
+      operationId: createWebhook
+      responses:
+        '201':
+          description: Created
+  /webhooks/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    patch:
+      tags:
+      - Webhooks
+      summary: Update a webhook
+      operationId: updateWebhook
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Webhooks
+      summary: Delete a webhook
+      operationId: deleteWebhook
+      responses:
+        '204':
+          description: Deleted
+  /webhooks/{id}/events:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Webhooks
+      summary: List webhook events
+      operationId: listWebhookEvents
+      responses:
+        '200':
+          description: OK
+  /webhooks/{id}/events/{eventId}/retry:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: eventId
+      in: path
+      required: true
+      schema:
+        type: string
+    post:
+      tags:
+      - Webhooks
+      summary: Retry a webhook event
+      operationId: retryWebhookEvent
+      responses:
+        '202':
+          description: Accepted
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Tally API key created in the workspace dashboard, sent as "Authorization: Bearer <token>".'

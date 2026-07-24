@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: Tally REST Forms Submissions API
+  description: 'REST API for the Tally form and survey builder. Manage forms, questions, submissions, workspaces, organization users and invites, and webhooks. Bearer token authentication using API keys created from the workspace dashboard. Source: https://developers.tally.so/'
+  version: '1.0'
+  contact:
+    name: Tally
+    url: https://developers.tally.so/
+servers:
+- url: https://api.tally.so
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Submissions
+paths:
+  /forms/{id}/submissions:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Submissions
+      summary: List submissions
+      operationId: listSubmissions
+      responses:
+        '200':
+          description: OK
+  /forms/{id}/submissions/{submissionId}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: submissionId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Submissions
+      summary: Fetch a submission
+      operationId: getSubmission
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Submissions
+      summary: Delete a submission
+      operationId: deleteSubmission
+      responses:
+        '204':
+          description: Deleted
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Tally API key created in the workspace dashboard, sent as "Authorization: Bearer <token>".'

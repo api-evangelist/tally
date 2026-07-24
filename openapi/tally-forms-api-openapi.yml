@@ -1,0 +1,85 @@
+openapi: 3.1.0
+info:
+  title: Tally REST Forms API
+  description: 'REST API for the Tally form and survey builder. Manage forms, questions, submissions, workspaces, organization users and invites, and webhooks. Bearer token authentication using API keys created from the workspace dashboard. Source: https://developers.tally.so/'
+  version: '1.0'
+  contact:
+    name: Tally
+    url: https://developers.tally.so/
+servers:
+- url: https://api.tally.so
+  description: Production
+security:
+- BearerAuth: []
+tags:
+- name: Forms
+paths:
+  /forms:
+    get:
+      tags:
+      - Forms
+      summary: List forms
+      operationId: listForms
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Forms
+      summary: Create a form
+      operationId: createForm
+      responses:
+        '201':
+          description: Created
+  /forms/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Forms
+      summary: Fetch a single form
+      operationId: getForm
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+      - Forms
+      summary: Update form settings/blocks
+      operationId: updateForm
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Forms
+      summary: Delete a form
+      operationId: deleteForm
+      responses:
+        '204':
+          description: Deleted
+  /forms/{id}/questions:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Forms
+      summary: List questions in a form
+      operationId: listFormQuestions
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Tally API key created in the workspace dashboard, sent as "Authorization: Bearer <token>".'
