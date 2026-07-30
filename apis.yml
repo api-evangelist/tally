@@ -8,7 +8,20 @@ description: >-
   webhooks programmatically and is free to use across all plans (including
   Free). Tally also publishes a JS embed library and an MCP server for AI
   integration.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tally.png
 tags:
   - Forms
   - Surveys
@@ -21,42 +34,100 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: tally:rest
-    name: Tally REST API
-    description: >-
-      REST API for managing forms and fetching/deleting submissions. Bearer
-      token auth using API keys created from the workspace dashboard. Free on
-      every Tally plan including the Free tier.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developers.tally.so/
-    baseURL: https://api.tally.so
-    tags:
-      - REST
-      - Forms
-      - Submissions
-      - Webhooks
-    properties:
-      - type: Documentation
-        url: https://developers.tally.so/
-      - type: APIReference
-        url: https://developers.tally.so/api-reference/introduction
-      - type: Authentication
-        url: https://developers.tally.so/api-reference/authentication
-      - type: Webhooks
-        url: https://tally.so/help/webhooks
-  - aid: tally:embed
-    name: Tally Embed JS
-    description: >-
-      JavaScript embed library exposing Tally.openPopup, Tally.closePopup,
-      Tally.loadEmbeds and event listeners for form load, page view,
-      submission and popup close.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://tally.so/help/developer-resources
-    baseURL: https://tally.so/widgets/embed.js
-    tags:
-      - SDK
-      - Embed
-      - JavaScript
+- aid: tally:rest
+  name: Tally REST API
+  description: >-
+    REST API for managing forms and fetching/deleting submissions. Bearer token auth using API keys created
+    from the workspace dashboard. Free on every Tally plan including the Free tier.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developers.tally.so/
+  baseURL: https://api.tally.so
+  tags:
+  - REST
+  - Forms
+  - Submissions
+  - Webhooks
+  properties:
+  - type: Documentation
+    url: https://developers.tally.so/
+  - type: APIReference
+    url: https://developers.tally.so/api-reference/introduction
+  - type: Authentication
+    url: https://developers.tally.so/api-reference/authentication
+  - type: Webhooks
+    url: https://tally.so/help/webhooks
+- aid: tally:embed
+  name: Tally Embed JS
+  description: >-
+    JavaScript embed library exposing Tally.openPopup, Tally.closePopup, Tally.loadEmbeds and event listeners
+    for form load, page view, submission and popup close.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://tally.so/help/developer-resources
+  baseURL: https://tally.so/widgets/embed.js
+  tags:
+  - SDK
+  - Embed
+  - JavaScript
+- aid: tally:tally-forms-api
+  name: Tally Forms API
+  description: The Forms API from Tally — 3 operation(s) for forms.
+  humanURL: https://developers.tally.so/
+  baseURL: https://api.tally.so
+  tags:
+  - Forms
+  properties:
+  - type: OpenAPI
+    url: openapi/tally-forms-api-openapi.yml
+- aid: tally:tally-organization-api
+  name: Tally Organization API
+  description: The Organization API from Tally — 4 operation(s) for organization.
+  humanURL: https://developers.tally.so/
+  baseURL: https://api.tally.so
+  tags:
+  - Organization
+  properties:
+  - type: OpenAPI
+    url: openapi/tally-organization-api-openapi.yml
+- aid: tally:tally-submissions-api
+  name: Tally Submissions API
+  description: The Submissions API from Tally — 2 operation(s) for submissions.
+  humanURL: https://developers.tally.so/
+  baseURL: https://api.tally.so
+  tags:
+  - Submissions
+  properties:
+  - type: OpenAPI
+    url: openapi/tally-submissions-api-openapi.yml
+- aid: tally:tally-users-api
+  name: Tally Users API
+  description: The Users API from Tally — 1 operation(s) for users.
+  humanURL: https://developers.tally.so/
+  baseURL: https://api.tally.so
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/tally-users-api-openapi.yml
+- aid: tally:tally-webhooks-api
+  name: Tally Webhooks API
+  description: The Webhooks API from Tally — 4 operation(s) for webhooks.
+  humanURL: https://developers.tally.so/
+  baseURL: https://api.tally.so
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/tally-webhooks-api-openapi.yml
+- aid: tally:tally-workspaces-api
+  name: Tally Workspaces API
+  description: The Workspaces API from Tally — 2 operation(s) for workspaces.
+  humanURL: https://developers.tally.so/
+  baseURL: https://api.tally.so
+  tags:
+  - Workspaces
+  properties:
+  - type: OpenAPI
+    url: openapi/tally-workspaces-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/tally-agentic-access.yml
