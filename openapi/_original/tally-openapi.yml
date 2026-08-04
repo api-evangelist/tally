@@ -1,0 +1,301 @@
+openapi: 3.1.0
+info:
+  title: Tally REST API
+  description: >-
+    REST API for the Tally form and survey builder. Manage forms, questions,
+    submissions, workspaces, organization users and invites, and webhooks.
+    Bearer token authentication using API keys created from the workspace
+    dashboard. Source: https://developers.tally.so/
+  version: "1.0"
+  contact:
+    name: Tally
+    url: https://developers.tally.so/
+servers:
+  - url: https://api.tally.so
+    description: Production
+security:
+  - BearerAuth: []
+tags:
+  - name: Forms
+  - name: Submissions
+  - name: Workspaces
+  - name: Organization
+  - name: Webhooks
+  - name: Users
+paths:
+  /forms:
+    get:
+      tags: [Forms]
+      summary: List forms
+      operationId: listForms
+      responses:
+        "200":
+          description: OK
+    post:
+      tags: [Forms]
+      summary: Create a form
+      operationId: createForm
+      responses:
+        "201":
+          description: Created
+  /forms/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Forms]
+      summary: Fetch a single form
+      operationId: getForm
+      responses:
+        "200":
+          description: OK
+    patch:
+      tags: [Forms]
+      summary: Update form settings/blocks
+      operationId: updateForm
+      responses:
+        "200":
+          description: OK
+    delete:
+      tags: [Forms]
+      summary: Delete a form
+      operationId: deleteForm
+      responses:
+        "204":
+          description: Deleted
+  /forms/{id}/questions:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Forms]
+      summary: List questions in a form
+      operationId: listFormQuestions
+      responses:
+        "200":
+          description: OK
+  /forms/{id}/submissions:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Submissions]
+      summary: List submissions
+      operationId: listSubmissions
+      responses:
+        "200":
+          description: OK
+  /forms/{id}/submissions/{submissionId}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: submissionId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Submissions]
+      summary: Fetch a submission
+      operationId: getSubmission
+      responses:
+        "200":
+          description: OK
+    delete:
+      tags: [Submissions]
+      summary: Delete a submission
+      operationId: deleteSubmission
+      responses:
+        "204":
+          description: Deleted
+  /workspaces:
+    get:
+      tags: [Workspaces]
+      summary: List workspaces
+      operationId: listWorkspaces
+      responses:
+        "200":
+          description: OK
+    post:
+      tags: [Workspaces]
+      summary: Create a workspace
+      operationId: createWorkspace
+      responses:
+        "201":
+          description: Created
+  /workspaces/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Workspaces]
+      summary: Fetch a workspace
+      operationId: getWorkspace
+      responses:
+        "200":
+          description: OK
+    patch:
+      tags: [Workspaces]
+      summary: Update a workspace
+      operationId: updateWorkspace
+      responses:
+        "200":
+          description: OK
+    delete:
+      tags: [Workspaces]
+      summary: Delete a workspace
+      operationId: deleteWorkspace
+      responses:
+        "204":
+          description: Deleted
+  /organizations/users:
+    get:
+      tags: [Organization]
+      summary: List users
+      operationId: listOrganizationUsers
+      responses:
+        "200":
+          description: OK
+  /organizations/users/{userId}:
+    parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      tags: [Organization]
+      summary: Remove a user
+      operationId: removeOrganizationUser
+      responses:
+        "204":
+          description: Removed
+  /organizations/invites:
+    get:
+      tags: [Organization]
+      summary: List invites
+      operationId: listInvites
+      responses:
+        "200":
+          description: OK
+    post:
+      tags: [Organization]
+      summary: Create an invite
+      operationId: createInvite
+      responses:
+        "201":
+          description: Created
+  /organizations/invites/{inviteId}:
+    parameters:
+      - name: inviteId
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      tags: [Organization]
+      summary: Cancel an invite
+      operationId: cancelInvite
+      responses:
+        "204":
+          description: Cancelled
+  /webhooks:
+    get:
+      tags: [Webhooks]
+      summary: List webhooks
+      operationId: listWebhooks
+      responses:
+        "200":
+          description: OK
+    post:
+      tags: [Webhooks]
+      summary: Create a webhook
+      operationId: createWebhook
+      responses:
+        "201":
+          description: Created
+  /webhooks/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      tags: [Webhooks]
+      summary: Update a webhook
+      operationId: updateWebhook
+      responses:
+        "200":
+          description: OK
+    delete:
+      tags: [Webhooks]
+      summary: Delete a webhook
+      operationId: deleteWebhook
+      responses:
+        "204":
+          description: Deleted
+  /webhooks/{id}/events:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Webhooks]
+      summary: List webhook events
+      operationId: listWebhookEvents
+      responses:
+        "200":
+          description: OK
+  /webhooks/{id}/events/{eventId}/retry:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: eventId
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags: [Webhooks]
+      summary: Retry a webhook event
+      operationId: retryWebhookEvent
+      responses:
+        "202":
+          description: Accepted
+  /users/me:
+    get:
+      tags: [Users]
+      summary: Fetch current user info
+      operationId: getCurrentUser
+      responses:
+        "200":
+          description: OK
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        Tally API key created in the workspace dashboard, sent as
+        "Authorization: Bearer <token>".

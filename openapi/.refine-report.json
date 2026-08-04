@@ -1,0 +1,24 @@
+{
+  "provider": "tally",
+  "sources": [
+    "tally-forms-api-openapi.yml",
+    "tally-organization-api-openapi.yml",
+    "tally-submissions-api-openapi.yml",
+    "tally-users-api-openapi.yml",
+    "tally-webhooks-api-openapi.yml",
+    "tally-workspaces-api-openapi.yml"
+  ],
+  "outputs": [
+    "tally-forms-api-openapi.yml",
+    "tally-organization-api-openapi.yml",
+    "tally-submissions-api-openapi.yml",
+    "tally-users-api-openapi.yml",
+    "tally-webhooks-api-openapi.yml",
+    "tally-workspaces-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
