@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tally REST Forms Submissions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Submissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List submissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms/:id/submissions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List submissions"
+        },
+        {
+          "info": {
+            "name": "Fetch a submission",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms/:id/submissions/:submissionId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "submissionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch a submission"
+        },
+        {
+          "info": {
+            "name": "Delete a submission",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/forms/:id/submissions/:submissionId",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "submissionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a submission"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

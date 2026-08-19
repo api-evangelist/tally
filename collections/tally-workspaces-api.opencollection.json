@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tally REST Forms Workspaces API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workspaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workspaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/workspaces"
+          },
+          "docs": "List workspaces"
+        },
+        {
+          "info": {
+            "name": "Create a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/workspaces"
+          },
+          "docs": "Create a workspace"
+        },
+        {
+          "info": {
+            "name": "Fetch a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/workspaces/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch a workspace"
+        },
+        {
+          "info": {
+            "name": "Update a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.tally.so/workspaces/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a workspace"
+        },
+        {
+          "info": {
+            "name": "Delete a workspace",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/workspaces/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a workspace"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

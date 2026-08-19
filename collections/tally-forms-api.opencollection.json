@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tally REST Forms API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Forms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List forms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms"
+          },
+          "docs": "List forms"
+        },
+        {
+          "info": {
+            "name": "Create a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/forms"
+          },
+          "docs": "Create a form"
+        },
+        {
+          "info": {
+            "name": "Fetch a single form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch a single form"
+        },
+        {
+          "info": {
+            "name": "Update form settings/blocks",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.tally.so/forms/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update form settings/blocks"
+        },
+        {
+          "info": {
+            "name": "Delete a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/forms/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a form"
+        },
+        {
+          "info": {
+            "name": "List questions in a form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/forms/:id/questions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List questions in a form"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

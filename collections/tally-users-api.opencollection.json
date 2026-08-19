@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tally REST Forms Users API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch current user info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/users/me"
+          },
+          "docs": "Fetch current user info"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

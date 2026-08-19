@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tally REST Forms Organization API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/organizations/users"
+          },
+          "docs": "List users"
+        },
+        {
+          "info": {
+            "name": "Remove a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/organizations/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove a user"
+        },
+        {
+          "info": {
+            "name": "List invites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/organizations/invites"
+          },
+          "docs": "List invites"
+        },
+        {
+          "info": {
+            "name": "Create an invite",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/organizations/invites"
+          },
+          "docs": "Create an invite"
+        },
+        {
+          "info": {
+            "name": "Cancel an invite",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/organizations/invites/:inviteId",
+            "params": [
+              {
+                "name": "inviteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel an invite"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

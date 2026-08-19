@@ -1,0 +1,123 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Tally REST Forms Webhooks API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List webhooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/webhooks"
+          },
+          "docs": "List webhooks"
+        },
+        {
+          "info": {
+            "name": "Create a webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/webhooks"
+          },
+          "docs": "Create a webhook"
+        },
+        {
+          "info": {
+            "name": "Update a webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.tally.so/webhooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a webhook"
+        },
+        {
+          "info": {
+            "name": "Delete a webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.tally.so/webhooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a webhook"
+        },
+        {
+          "info": {
+            "name": "List webhook events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.tally.so/webhooks/:id/events",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List webhook events"
+        },
+        {
+          "info": {
+            "name": "Retry a webhook event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.tally.so/webhooks/:id/events/:eventId/retry",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retry a webhook event"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
