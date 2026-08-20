@@ -28,6 +28,14 @@ tags:
   - No-Code
   - Free
   - Notion-style
+  - Webhook
+  - MCP
+tags_raw:
+  - Forms
+  - Surveys
+  - No-Code
+  - Free
+  - Notion-style
   - Webhooks
   - MCP
 created: '2026-05-08'
@@ -43,6 +51,11 @@ apis:
   humanURL: https://developers.tally.so/
   baseURL: https://api.tally.so
   tags:
+  - REST
+  - Forms
+  - Submissions
+  - Webhook
+  tags_raw:
   - REST
   - Forms
   - Submissions
@@ -104,6 +117,8 @@ apis:
   humanURL: https://developers.tally.so/
   baseURL: https://api.tally.so
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -114,6 +129,8 @@ apis:
   humanURL: https://developers.tally.so/
   baseURL: https://api.tally.so
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
