@@ -8,6 +8,18 @@ description: >-
   webhooks programmatically and is free to use across all plans (including
   Free). Tally also publishes a JS embed library and an MCP server for AI
   integration.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
