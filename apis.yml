@@ -154,6 +154,8 @@ apis:
   humanURL: https://developers.tally.so/
   baseURL: https://api.tally.so
   tags:
+  - Workspace
+  tags_raw:
   - Workspaces
   properties:
   - type: OpenAPI
