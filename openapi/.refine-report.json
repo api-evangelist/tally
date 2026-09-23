@@ -1,12 +1,7 @@
 {
   "provider": "tally",
   "sources": [
-    "tally-forms-api-openapi.yml",
-    "tally-organization-api-openapi.yml",
-    "tally-submissions-api-openapi.yml",
-    "tally-users-api-openapi.yml",
-    "tally-webhooks-api-openapi.yml",
-    "tally-workspaces-api-openapi.yml"
+    "_original/tally-openapi.yml"
   ],
   "outputs": [
     "tally-forms-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "tally-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "tally-forms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tally-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tally-submissions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tally-users-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tally-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tally-workspaces-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
