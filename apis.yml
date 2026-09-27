@@ -43,6 +43,7 @@ tags:
   - Notion-style
   - Webhook
   - MCP
+  - Accounting
 tags_raw:
   - Forms
   - Surveys
@@ -51,6 +52,7 @@ tags_raw:
   - Notion-style
   - Webhooks
   - MCP
+  - Accounting
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.23'
