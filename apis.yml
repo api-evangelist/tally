@@ -163,6 +163,9 @@ apis:
   - type: OpenAPI
     url: openapi/tally-workspaces-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/tally-capability-edges.yml
+    name: Tally Business Capability Map
   - type: AgenticAccess
     url: agentic-access/tally-agentic-access.yml
   - type: DomainSecurity
