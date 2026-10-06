@@ -54,7 +54,7 @@ tags_raw:
   - MCP
   - Accounting
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: tally:rest
@@ -163,6 +163,8 @@ apis:
   - type: OpenAPI
     url: openapi/tally-workspaces-api-openapi.yml
 common:
+  - url: https://blog.tally.so/rss/
+    type: BlogRSS
   - type: CapabilityMap
     url: capabilities/tally-capability-edges.yml
     name: Tally Business Capability Map
